@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+.signIn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 32px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.text-sign {
+  margin-bottom: 20px;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.signInBox {
+  border: 1px solid #f0f1f3;
+  padding: 30px;
+  width: 480px;
+}
+
+.signInText {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+  position: relative;
+}
+
+.eye {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  color: #596780;
+}
+
+.signInForget {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 23px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.forget {
+  color: #4e5d78;
+}
+
+.create {
+  color: #026dd6;
+}
+
+.signInButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+  height: 40px;
+}
+
+.signInButton button {
+  width: 100%;
+  background-color: #0baf7b;
+  color: white;
+  font-size: 15px;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  border: none;
+  border-radius: 1px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.signInButton button:hover {
+  background-color: #069265;
+  transition: 0.4s;
+}
+
+.signInSSO {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  background-color: #e1e4e8;
+  border: none;
+}
+
+.signInSSO span {
+  font-size: 14px;
+  width: 570px;
+  margin-inline: 10px;
+  color: #4e5d78;
+  font-weight: 600;
+}
+
+.signInSocial {
+  display: flex;
+  flex-direction: column;
+  margin-top: 22px;
+  gap: 21px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border: 1px solid #e1e4e8;
+  height: 42px;
+  color: #4e5d78;
+  padding-left: 10px;
+  gap: 10px;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.link:hover {
+  background-color: #e1e4e8;
+  transition: 0.3s;
+}
+
+.link span {
+  letter-spacing: -0.3px;
+}
+
+.logo-social {
+  width: 24px;
+}
