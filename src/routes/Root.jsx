@@ -1,6 +1,7 @@
 import ForgetPassword from "../pages/Login/ForgetPassword";
 import Register from "../pages/Login/Register";
 import SignIn from "../pages/Login/SignIn";
+import Home from "../pages/Home/Home";
 
 export const root = [
   {
@@ -19,6 +20,12 @@ export const root = [
     name: "ForgetPassword",
     path: "/forgetPassword",
     element: <ForgetPassword />,
+    isPrivate: false,
+  },
+  {
+    name: "Home",
+    path: "/",
+    element: <Home />,
     isPrivate: false,
   },
 ];
