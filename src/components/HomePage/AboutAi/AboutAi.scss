@@ -1,0 +1,54 @@
+.about_ai_box {
+  background-color: #272933;
+  display: flex;
+  flex-direction: column;
+
+  .cont {
+    width: 60%;
+    margin: 50px auto;
+    color: #fff;
+
+    h2 {
+      font-size: 30px;
+    }
+
+    hr {
+      margin-top: 10px;
+      margin-bottom: 35px;
+    }
+
+    p {
+      text-align: justify;
+      font-size: 17px;
+      line-height: 1.5;
+    }
+
+    h3 {
+      font-size: 26px;
+      margin-top: 40px;
+    }
+
+    .img_cont {
+      display: flex;
+      width: 80%;
+      margin: auto;
+    }
+
+    img {
+      width: 80%;
+      margin: auto;
+    }
+
+    .margin_p {
+      margin-top: 8px;
+    }
+
+    ul{
+        padding-left: 20px;
+    }
+
+    li{
+        list-style: disc;
+    }
+  }
+}

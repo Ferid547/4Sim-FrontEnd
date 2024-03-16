@@ -1,6 +1,6 @@
-import navbarData from "../../data/NavbarData";
-import logoImg from "../../images/navbar/logo.png";
-import arrowIcon from "../../icons/arrow.svg";
+import navbarData from "../../../data/NavbarData";
+import logoImg from "../../../assets/images/navbar/logo.png";
+import arrowIcon from "../../../assets/icons/arrow.svg";
 import "./Navbar.scss";
 import { useState } from "react";
 import { useNavigate } from "react-router";
@@ -10,8 +10,9 @@ const Navbar = () => {
 
   const navigate = useNavigate();
 
-  const toggleDropdown = (index) => {
+  const toggleDropdown = (index, data) => {
     setOpenDropdown((prevIndex) => (prevIndex === index ? null : index));
+    navigate(data.route);
   };
 
   return (
@@ -23,7 +24,10 @@ const Navbar = () => {
       <div className="nav_btns">
         {navbarData.map((data, index) => (
           <div key={data.id}>
-            <button className="title" onClick={() => toggleDropdown(index)}>
+            <button
+              className="title"
+              onClick={() => toggleDropdown(index, data)}
+            >
               {data.title}
             </button>
 
