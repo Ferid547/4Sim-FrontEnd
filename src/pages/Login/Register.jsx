@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import Google from "../../images/social/Google.png";
-import Linkedin from "../../images/social/LinkedIn.png";
+import Google from "../../assets/images/social/Google.png";
+import Linkedin from "../../assets/images/social/LinkedIn.png";
 import { useState } from "react";
 import axios from "axios";
 import { Input } from "../../components/Input/Input";
