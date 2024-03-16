@@ -3,6 +3,8 @@ import Register from "../pages/Login/Register";
 import SignIn from "../pages/Login/SignIn";
 import Home from "../pages/Home/Home";
 import AboutAi from "../components/HomePage/AboutAi/AboutAi";
+import { Vacancies } from "../pages/Vacancies/ViewVacancies/Vacancies";
+import { CreateVacancies } from "../pages/Vacancies/NewVacancies/CreateVacancies";
 
 export const root = [
   {
@@ -33,6 +35,18 @@ export const root = [
     name: "AboutAi",
     path: "/aboutai",
     element: <AboutAi />,
+    isPrivate: false,
+  },
+  {
+    name: "Vacancies",
+    path: "/vacancies",
+    element: <Vacancies />,
+    isPrivate: false,
+  },
+  {
+    name: "CreateVacancies",
+    path: "/createVacancies",
+    element: <CreateVacancies />,
     isPrivate: false,
   },
 ];

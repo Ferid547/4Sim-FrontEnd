@@ -1,0 +1,6 @@
+.MuiDataGrid-columnHeaderTitleContainer {
+  justify-content: center !important;
+}
+.MuiDataGrid-row:not(.MuiDataGrid-row--dynamicHeight) > .MuiDataGrid-cell {
+  justify-content: center;
+}
