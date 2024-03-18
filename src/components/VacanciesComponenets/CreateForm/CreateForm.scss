@@ -1,0 +1,51 @@
+.mainBox {
+  border: 1px solid #e6e6e6;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .inlineBox {
+      border: 1px solid #e6e6e6;
+      border-radius: 4px;
+      display: flex;
+      justify-content: space-between;
+      padding: 30px;
+      .box {
+        border: 1px solid #e6e6e6;
+        border-radius: 4px;
+        padding: 10px;
+        width: 180px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        align-items: center;
+        input {
+          width: 16px;
+          height: 16px;
+          accent-color: #4d77c0;
+        }
+        label {
+          font-size: 13px;
+        }
+      }
+      .selectBox {
+        border: 1px solid #e6e6e6;
+        border-radius: 4px;
+        padding: 10px;
+        width: 300px;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .inlineBox {
+    gap: 30px;
+  }
+}
