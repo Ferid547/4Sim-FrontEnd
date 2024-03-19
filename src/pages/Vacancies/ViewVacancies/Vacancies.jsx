@@ -18,7 +18,7 @@ export const Vacancies = () => {
           <FaPlus />
           YENİSİNİ ƏLAVƏ ET
         </Button>
-        <div style={{ marginBlock: "20px" }}>
+        <div style={{ marginBlock: "20px", width: "100%" }}>
           <DataTable />
         </div>
       </div>

@@ -17,3 +17,14 @@
     padding-top: 20px;
   }
 }
+
+@media (max-width: 768) {
+  .admin_vacancies {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    align-items: normal;
+    margin: auto;
+    padding-top: 20px;
+  }
+}

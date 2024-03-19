@@ -37,7 +37,7 @@ export const CreateForm = () => {
             type="text"
             placeholder="Vakansiya kodu"
             disabled
-            style={{ width: "300px", paddingLeft: "10px" }}
+            className="inputBox"
           />
           <select name="" id="" className="selectBox">
             <option value="1" label="Vəzifə adı" />

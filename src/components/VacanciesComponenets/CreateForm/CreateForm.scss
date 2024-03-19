@@ -1,3 +1,5 @@
+$laptop: 1024px;
+$tablet: 768px;
 .mainBox {
   border: 1px solid #e6e6e6;
   padding: 20px;
@@ -11,8 +13,13 @@
       border: 1px solid #e6e6e6;
       border-radius: 4px;
       display: flex;
-      justify-content: space-between;
       padding: 30px;
+      gap: 20px;
+      justify-content: space-between;
+      .inputBox {
+        width: 300px;
+        padding-left: 10px;
+      }
       .box {
         border: 1px solid #e6e6e6;
         border-radius: 4px;
@@ -44,8 +51,23 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: $laptop) {
   .inlineBox {
     gap: 30px;
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .mainBox {
+    form {
+      .inlineBox {
+        .selectBox {
+          width: 100%;
+        }
+        .inputBox {
+          width: 100%;
+        }
+      }
+    }
   }
 }
