@@ -6,8 +6,18 @@ import Logo from "../../assets/images/navbar/logo.png";
 import { Avatar } from "@mui/material";
 import { Link } from "react-router-dom";
 import "./AdminHeader.scss";
+import { useState } from "react";
 
 export const AdminHeader = () => {
+  const [userMenu, setUserMenu] = useState(false);
+  const showUserMenu = () => {
+    setUserMenu(!userMenu);
+  };
+  console.log(userMenu);
+
+  const closeUserMenu = () => {
+    setUserMenu(false);
+  };
   return (
     <div className="admin">
       <div className="logo">
@@ -32,10 +42,25 @@ export const AdminHeader = () => {
           <div className="admin_user_icon">
             <PiBellSimpleLight id="bell" />
           </div>
-          <div className="admin_user_box">
+          <div className="admin_user_box" onClick={showUserMenu}>
             <span>Ağamirzə Məmmədli</span>
             <Avatar className="avatar" />{" "}
           </div>
+          {userMenu && (
+            <div
+              className="userMenu"
+              onClick={closeUserMenu}
+              onMouseLeave={closeUserMenu}
+            >
+              <ul>
+                <li>
+                  <Link>Profil</Link>
+                  <Link>Settings</Link>
+                  <Link>Log out</Link>
+                </li>
+              </ul>
+            </div>
+          )}
         </div>
       </div>
     </div>

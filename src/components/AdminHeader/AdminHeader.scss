@@ -33,7 +33,7 @@
     }
     .admin_search_icon {
       position: absolute;
-      top: 16px;
+      top: 15px;
       right: 12px;
       cursor: pointer;
       #search {
@@ -84,6 +84,7 @@
       font-weight: 600;
       cursor: pointer;
       transition: 0.4s;
+      position: relative;
 
       .admin_user_icon {
         display: flex;
@@ -122,6 +123,34 @@
           height: 34px;
         }
       }
+      .userMenu {
+        position: absolute;
+        right: -1px;
+        top: 54px;
+        border-radius: 4px;
+        background: white;
+        z-index: 9999;
+        font-size: 15px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        animation: userMenuOpen 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+        ul {
+          padding-block: 10px;
+          li {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            a {
+              color: #455674;
+              padding-block: 6px;
+              padding-inline: 20px;
+              &:hover {
+                background-color: #455674;
+                color: white;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -148,5 +177,16 @@
       gap: 30px;
       margin-left: 0;
     }
+  }
+}
+
+@keyframes userMenuOpen {
+  0% {
+    transform: scaleY(0.4);
+    transform-origin: 100% 0;
+  }
+  100% {
+    transform: scaleY(1);
+    transform-origin: 100% 0;
   }
 }

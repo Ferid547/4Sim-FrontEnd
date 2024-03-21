@@ -5,6 +5,7 @@ import { useState } from "react";
 import axios from "axios";
 import { Input } from "../../components/Input/Input";
 import "./Login.scss";
+import Swal from "sweetalert2";
 
 const SignIn = () => {
   const [form, setForm] = useState({
@@ -24,42 +25,36 @@ const SignIn = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await axios.post("YOUR_AUTH_ENDPOINT", form);
-      const token = response.data.token; // Token'ı alın
-      // Tokeni burada saxlamaq
-      console.log(token);
-    } catch (error) {
-      console.error("Error signing in:", error);
+    if (form.email === "" && form.password === "") {
+      Swal.fire({
+        title: "Boş məlumat",
+        text: "Xanaları doldurun",
+        icon: "info",
+      });
+    } else {
+      if (
+        form.email === "igidov222@gmail.com" &&
+        form.password === "12345678"
+      ) {
+        Swal.fire({
+          title: "Login!",
+          text: "Doğrulandı",
+          icon: "success",
+        });
+        const response = await axios.post("YOUR_AUTH_ENDPOINT", form);
+        const token = response.data.token; // Token'ı alın
+        // Tokeni burada saxlamaq
+        console.log(token);
+      } else {
+        Swal.fire({
+          title: "Error!",
+          text: "Yanlış istifadəçi",
+          icon: "error",
+        });
+        console.error("Error signing in:", error);
+      }
     }
   };
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     const response = await axios.post("YOUR_AUTH_ENDPOINT", form);
-  //     const token = response.data.token; // Token'ı alın
-  //     // Tokeni burada saklayabilirsiniz, örneğin localStorage kullanarak:
-  //     localStorage.setItem("token", token);
-
-  //     // Başarılı giriş mesajını göster
-  //     Swal.fire({
-  //       title: "Uğurlu!",
-  //       text: "Giriş uğurlu.",
-  //       icon: "success",
-  //       timer: 2000,
-  //     });
-  //   } catch (error) {
-  //     console.error("Error signing in:", error);
-  //     // Hata durumunda kullanıcıya bildirim gösterme
-  //     Swal.fire({
-  //       title: "Xəta!",
-  //       text: "Giriş zamanı xəta baş verdi.",
-  //       icon: "error",
-  //       timer: 2000,
-  //     });
-  //   }
-  // };
 
   const validateForm = () => {
     let valid = true;
@@ -79,7 +74,6 @@ const SignIn = () => {
     return valid;
   };
 
-  console.log(form);
   return (
     <div className="signIn">
       <span className="text-sign">Daxil olun</span>

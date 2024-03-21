@@ -1,7 +1,5 @@
-import * as React from "react";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import AddIcon from "@mui/icons-material/Add";
+import { useState } from "react";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/DeleteOutlined";
 import SaveIcon from "@mui/icons-material/Save";
@@ -9,18 +7,17 @@ import CancelIcon from "@mui/icons-material/Close";
 import {
   GridRowModes,
   DataGrid,
-  GridToolbarContainer,
   GridActionsCellItem,
   GridRowEditStopReasons,
 } from "@mui/x-data-grid";
 import {
-  randomCreatedDate,
   randomTraderName,
   randomId,
   randomArrayItem,
   randomCommodity,
   randomCity,
 } from "@mui/x-data-grid-generator";
+import "./DataTableAdmin.scss";
 
 const roles = ["Gözləmədə", "Qəbul edildi"];
 const randomRole = () => {
@@ -78,16 +75,15 @@ const initialRows = [
   },
 ];
 
-export default function FullFeaturedCrudGrid() {
-  const [rows, setRows] = React.useState(initialRows);
-  const [rowModesModel, setRowModesModel] = React.useState({});
+export const DataTableAdmin = () => {
+  const [rows, setRows] = useState(initialRows);
+  const [rowModesModel, setRowModesModel] = useState({});
 
   const handleRowEditStop = (params, event) => {
     if (params.reason === GridRowEditStopReasons.rowFocusOut) {
       event.defaultMuiPrevented = true;
     }
   };
-
   const handleEditClick = (id) => () => {
     setRowModesModel({ ...rowModesModel, [id]: { mode: GridRowModes.Edit } });
   };
@@ -222,14 +218,6 @@ export default function FullFeaturedCrudGrid() {
       },
     },
   ];
-  const getCellStyle = (params) => {
-    const { field, row } = params;
-    if (field === "role" && row.role === "Gözləmədə") {
-      return { backgroundColor: "#FFEB3B" }; // Sarı arka plan renk
-    }
-    return {};
-  };
-
   return (
     <Box
       sx={{
@@ -258,4 +246,4 @@ export default function FullFeaturedCrudGrid() {
       />
     </Box>
   );
-}
+};
